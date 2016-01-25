@@ -1,0 +1,27 @@
+#include "ros/ros.h"
+#include  "myfirst_laser/myfirst_msg.h"
+
+#include <sstream>
+
+int main(int argc,char **argv)
+{
+	ros::init(argc,argv,"myfirst_talker");
+	ros::NodeHandle n;
+	//myfirst_laser packagename 
+	//msg type name
+	ros::Publisher myfirst_chatter_pub=n.advertise<myfirst_laser::myfirst_msg>("myfirst_chatter",1000);
+	ros::Rate loop_rate(10);
+
+	int count=0;
+	while(ros::ok())
+	{
+		myfirst_laser::myfirst_msg my_msg;
+		my_msg.name="bob";
+		myfirst_chatter_pub.publish(msg);
+		ros::spinOnce();
+		loop_rate.sleep();
+		++count;
+	}
+
+	return 0;
+}

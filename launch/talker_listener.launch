@@ -1,0 +1,6 @@
+<launch>
+	<node pkg="myfirst_laser" name="talker" type="second_talker"/>
+	<node pkg="myfirst_laser" name="listener" type="second_listener"/>
+	<node pkg="myfirst_laser" name="first_listener" type="myfirst_listener"/>
+	<node pkg="myfirst_laser" name="first_talker" type="myfirst_talker"/>
+</launch>
